@@ -2,6 +2,8 @@
 
 /** @jsx React.DOM */
 
+var React = require('react/addons');
+
 var EntryInput = React.createClass({
 
 	getInitialState: function() {
@@ -11,18 +13,22 @@ var EntryInput = React.createClass({
 	},
 
 	/*
-	* TODO: Fix text input and submit - needs to create entry component upon Enter keyojec
+	* TODO: Fix text input and submit - needs to create entry component upon Enter key
 	*/
 	handleChange: function(event) {
 		event.preventDefault();
 		this.setState({input: event.target.value});
 	},
 
+  //
 	// Take in user text input and create a new entry object via handleUserInput()
+  //
 	handleSubmit: function(event) {
 		event.preventDefault();
 		this.props.handleUserInput(this.state.input);
 		this.setState({input: ''});
+
+    // TESTING
 		console.log("Input submitted.");
 	},
 
@@ -33,7 +39,7 @@ var EntryInput = React.createClass({
         	<form onSubmit={this.handleSubmit}>
         		<input 
         			type="text" 
-        			className="entry-input"
+        			className="form-control entry-input"
         			placeholder="What happened today?"
         			value={this.state.input}
         			onChange={this.handleChange}
@@ -45,3 +51,5 @@ var EntryInput = React.createClass({
 	}
 
 });
+
+module.exports = EntryInput;

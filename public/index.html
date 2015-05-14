@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-    <!-- LESS -->
-    <link rel="stylesheet/less" type="text/css" href="/styles.less" />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,7 +26,7 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-sm-12" id="app"></div>
+        <div class="col-sm-8 col-sm-offset-2" id="app"></div>
       </div>
     </div>
 
@@ -38,19 +38,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
     <!-- React -->
     <script src="https://fb.me/react-0.13.0.min.js"></script>
-    <!-- React JSX Transformer -->
-    <script src="https://fb.me/JSXTransformer-0.13.0.js"></script>
 
-    <!-- Transformed Components
-    <script src="build/posts_react.js"></script>
-    <script src="build/app_react.js"></script>
+    <!-- React JSX Transformer 
+    <script src="https://fb.me/JSXTransformer-0.13.0.js"></script>
     -->
 
-    <!-- Components --> 
+    <!-- Components 
     <script type="text/jsx" src="components/Entry.js"></script>
     <script type="text/jsx" src="components/EntryInput.js"></script>
     <script type="text/jsx" src="components/EntryList.js"></script>
-    <script type="text/jsx" src="components/App.js"></script>
+    <script type="text/jsx" src="components/Happenings.js"></script>
+    --> 
+
+    <!-- Main App Bundle -->
+    <script type="text/javascript" src="js/bundle.js"></script>
     
   </body>
 </html>
