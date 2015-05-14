@@ -21967,13 +21967,13 @@ var EntryList = React.createClass({displayName: "EntryList",
 
 	getInitialState: function() {
 		return {
-			
+
 		};
 	},
 
 	render: function() {
 		var entryListItems = this.props.entries.map(function(entry) {
-			return (React.createElement("li", {key: entry.key}, 
+			return (React.createElement("li", {value: entry.key, key: entry.key}, 
 								React.createElement(Entry, {
 									key: entry.key, 
 									date: entry.date, 
@@ -21982,10 +21982,13 @@ var EntryList = React.createClass({displayName: "EntryList",
 							));	
 		});
 
+		// Reverse the order of list item elements in the array so that the list stacks upward
+		entryListItems.reverse();
+
 		return (
 			React.createElement("div", {className: "row"}, 
 				React.createElement("div", {className: "col-sm-12"}, 
-        	React.createElement("ul", {className: "entry-list"}, 
+        	React.createElement("ol", {className: "entry-list"}, 
         		entryListItems
         	)
         )

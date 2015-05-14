@@ -10,13 +10,13 @@ var EntryList = React.createClass({
 
 	getInitialState: function() {
 		return {
-			
+
 		};
 	},
 
 	render: function() {
 		var entryListItems = this.props.entries.map(function(entry) {
-			return (<li key={entry.key}>
+			return (<li value={entry.key} key={entry.key}>
 								<Entry 
 									key={entry.key}
 									date={entry.date}
@@ -25,12 +25,15 @@ var EntryList = React.createClass({
 							</li>);	
 		});
 
+		// Reverse the order of list item elements in the array so that the list stacks upward
+		entryListItems.reverse();
+
 		return (
 			<div className="row">
 				<div className="col-sm-12">
-        	<ul className="entry-list">
+        	<ol className="entry-list">
         		{entryListItems}
-        	</ul>
+        	</ol>
         </div>
 			</div>
 			
